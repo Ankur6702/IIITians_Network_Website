@@ -9,6 +9,58 @@ import man from '../../images/man.webp'
 const Navbar = () => {
     const [Hide, setHide] = useState(false);
 
+    interface nav_detail {
+      text: string,
+      image: StaticImageData
+    }
+
+    const data3:nav_detail[] = [
+      {
+        text: 'Home',
+        image: home
+      },
+      {
+        text: 'About',
+        image: about
+      },
+      {
+        text: 'Projects & Events',
+        image: home
+      },
+      {
+        text: 'Programs',
+        image: home
+      },
+      {
+        text: 'Core Members',
+        image: home
+      },
+      {
+        text: 'Website Team',
+        image: home
+      },
+      {
+        text: 'Blogs / Podcast',
+        image: home
+      },
+      {
+        text: 'IIIT Alumni Network',
+        image: home
+      },
+      {
+        text: 'Project Ideas',
+        image: home
+      },
+      {
+        text: 'Sponsors',
+        image: home
+      },
+      {
+        text: 'Contact Us',
+        image: home
+      }
+    ]
+
     function Nav_Out () {
       return (
           <div className="z-30 top-0 flex fixed w-full h-full animate-navbar">
@@ -19,17 +71,7 @@ const Navbar = () => {
                 </div>
                 <hr className="mb-6" />
                 <div>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Home</a></h1> 
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={about} width="16" height="16"></Image><a href="#"> About</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Projects and Events</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Programs</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Core Members</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Website Team</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Blogs / Podcast</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> IIIT Alumni Network</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Projects Ideas</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Sponsors</a></h1>
-                <h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={home} width="16" height="16"></Image><a href="#"> Contact Us</a></h1>
+                {data3.map((item, index) => (<div key={index}><h1 className="text-white text-xl px-20 py-2 font-roboto"><Image src={item.image} width="16" height="16"></Image><a href="#"> {item.text}</a></h1></div>))}
                 </div>
                 <hr className="mt-6" />
                 <div className="px-12 py-2 flex items-center">

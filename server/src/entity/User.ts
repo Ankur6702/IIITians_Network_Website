@@ -18,17 +18,17 @@ export class UserClass {
 
     @Field()
     @prop({ required: true })
-    username!: string;
+    username: string;
 
     @Field({ nullable: true })
     @prop({ unique: true })
-    email?: string;
+    email: string;
 
     @prop()
     hashedPassword?: string;
 
     @prop({ required: true, default: "Internal Auth" })
-    provider!: string;
+    provider: string;
 
     @prop()
     socialId?: string;
@@ -41,10 +41,9 @@ export class UserClass {
     tokenVersion?: number;
 
     @prop({ default: false })
-    confirmed!: boolean;
+    confirmed: boolean;
 
 }
 
 const User = getModelForClass(UserClass);
-
 export default User;

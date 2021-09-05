@@ -11,6 +11,7 @@ module.exports = {
         '22': "5.8rem",
         '26': "6.6rem",
         '38': "9.8rem",
+        '120': "30rem",
       },
       keyframes: {
         navbar: {

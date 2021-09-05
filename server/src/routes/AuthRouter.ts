@@ -21,10 +21,10 @@ authRouter.get('/auth/github/callback',
 });
 
 authRouter.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] , session: false}));
+  passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 authRouter.get('/auth/google/callback', 
-passport.authenticate('google', { failureRedirect: '/login' }),
+passport.authenticate('google', { failureRedirect: '/login' , successRedirect: '/'}),
 function(req, res) {
   // Successful authentication, redirect home.
   res.send("Logged In!")
