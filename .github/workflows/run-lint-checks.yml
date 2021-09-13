@@ -36,6 +36,5 @@ jobs:
       - name: Lint Code
         shell: bash
         run: |
-          yarn
-          yarn eslint . --fix --ext .ts
-          find . -name '*.json' -not -path './node_modules/*' -exec yarn jsonlint {} -q \;
+          npm i
+          npm run lint

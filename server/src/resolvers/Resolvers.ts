@@ -1,5 +1,8 @@
-import { ConfirmUserResolver } from "../utils/confirmUser";
+import { ChangePasswordResolver } from "./ChangePassword";
+import { ConfirmUserResolver } from "./confirmUser";
+import { ForgotPasswordResolver } from "./ForgotPassword";
 import { HelloWorldResolver } from "./HelloWorldResolver";
-import { RegisterResolver } from "./register/RegisterResolver";
+import { LoginResolver } from "./Login";
+import { RegisterResolver } from "./RegisterResolver";
 
-export const Resolvers = [HelloWorldResolver, RegisterResolver, ConfirmUserResolver];
+export const Resolvers = [ HelloWorldResolver, RegisterResolver, ConfirmUserResolver, ChangePasswordResolver, ForgotPasswordResolver, LoginResolver ];

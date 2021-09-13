@@ -28,7 +28,6 @@ export interface Context
 const contextFn = ({ req, res, connection }: ExpressContext): Context => {
     let context = connection && connection.context;
     const currentUser = req.session.passport;
-    // console.log(currentUser);
     if (!context) context = buildContext({ req, res });
     // if (!currentUser) {
     //   currentUser = context.getUser();

@@ -27,15 +27,15 @@ import isAuth from './utils/isAuth'
   // const key = fs.readFileSync('/home/raghhav/selfsigned.key')
 
   const app = express();
-  
+
   // Passport Middleware
   app.use(passport.initialize())
   const passportSessionMiddleware = passport.session();
   // passportFacebookConfig();
-  
+
   app.use(session(sessionOption));
   app.use(passportSessionMiddleware);
-  app.use('/',authRouter);
+  app.use('/', authRouter);
 
   // Databse Connection
   await connectDatabase();
@@ -47,6 +47,12 @@ import isAuth from './utils/isAuth'
       authChecker: isAuth
     }),
     context: contextFn,
+    introspection: true,
+    playground: {
+      settings: {
+        "request.credentials": "include",
+      }
+    }
   });
 
   apolloServer.applyMiddleware({ app, cors: false });

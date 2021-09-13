@@ -14,7 +14,7 @@ authRouter.get('/auth/github',
   passport.authenticate('github'));
 
 authRouter.get('/auth/github/callback', 
-  passport.authenticate('github', { failureRedirect: '/login' }),
+  passport.authenticate('github', { failureRedirect: '/login', successRedirect: '/graphql'}),
   function(req, res) {
     // Successful authentication, redirect home.
     res.send("Logged In!")
@@ -24,7 +24,7 @@ authRouter.get('/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 authRouter.get('/auth/google/callback', 
-passport.authenticate('google', { failureRedirect: '/login' , successRedirect: '/'}),
+passport.authenticate('google', { failureRedirect: '/login' , successRedirect: '/graphql'}),
 function(req, res) {
   // Successful authentication, redirect home.
   res.send("Logged In!")
@@ -35,7 +35,7 @@ authRouter.get('/auth/linkedin',
 );
 
 authRouter.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
-  successRedirect: '/',
+  successRedirect: '/graphql',
   failureRedirect: '/login'
 }));
 

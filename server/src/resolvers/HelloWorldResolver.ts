@@ -12,7 +12,7 @@ export class HelloWorldResolver {
 
   @Authorized()
   @Query(() => [UserClass])
-  async users(): Promise<DocumentType<UserClass, BeAnObject>[]> {
+  async users(): Promise<DocumentType<UserClass, BeAnObject>[] | null> {
     const users = await User.find({});
     return users;
   }
